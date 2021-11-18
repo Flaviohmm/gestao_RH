@@ -7,16 +7,17 @@
         </div>
         <div class="col">
             Olá, {{ usuario.funcionario.nome }}
-            <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionarios</a>
-            <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a>
+            <a href="{% url 'list_funcionarios' %}" style="text-decoration: none;">Gerenciar Funcionarios</a>
+            <a href="{% url 'list_departamentos' %}" style="text-decoration: none;">Gerenciar Departamentos</a>
         </div>
         <div class="col">
             <a href="{% url 'logout' %}" style="text-decoration: none;">Logout</a>
 
             {% if usuario.funcionario.empresa %}
-                <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar Empresa</a>
+                <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}" 
+                    style="text-decoration: none;">Editar Empresa</a>
             {% else %}
-                <a href="{% url 'create_empresa' %}">Criar Empresa</a>
+                <a href="{% url 'create_empresa' %}" style="text-decoration: none;">Criar Empresa</a>
             {% endif %}
         </div>
     </div>
