@@ -1,9 +1,15 @@
 {% extends "base.html" %}
 
+{% load bootstrap5 %}
+
+{# Display a form #}
+
 {% block main %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
+    <form method="post" class="form">
+        {% csrf_token %}       
+        {% bootstrap_form form %}     
+        {% buttons %}
+            <button type="submit" class="btn btn-info">Login</button>
+        {% endbuttons %}
     </form>
 {% endblock %}
