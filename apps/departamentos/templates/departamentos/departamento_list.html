@@ -7,7 +7,7 @@
         <a href="{% url 'update_departamento' departamento.id %}" style="text-decoration: none;">
             {{ departamento }}
         </a>
-        <a href="" style="text-decoration: none;">
+        <a href="{% url 'delete_departamento' departamento.id %}" style="text-decoration: none;">
             Deletar
         </a>
         <br>
