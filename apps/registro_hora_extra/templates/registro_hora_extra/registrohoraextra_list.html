@@ -10,7 +10,14 @@
         <a href="{% url 'update_hora_extra' registro_re.id %}" style="text-decoration: none;">
             {{ registro_re }}
         </a>
+        <a href="{% url 'delete_hora_extra' registro_re.id %}" style="text-decoration: none;">
+            Deletar
+        </a>
         <br>
     {% endfor %}
+
+    {% if not object_list %}
+        <h3>Não existem registros de hora extra no banco de dados</h3>
+    {% endif %}
     
 {% endblock %}
