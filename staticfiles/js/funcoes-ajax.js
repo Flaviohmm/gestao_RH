@@ -6,11 +6,12 @@ function utilizouHoraExtra(id) {
         type: "POST",
         url: "/horas-extras/utilizou-hora-extra/" + id + "/",
         data: {
-            csrfmiddlewaretoken: token,
+            csrfmiddlewaretoken: token
         },
         success: function(result) {
-            console.log("Sucesso!!!")
-            $("#mensagem").text("Hora extra marcada como utilizada")
+            console.log(result)
+            $("#mensagem").text(result.mensagem)
+            $("#horas_atualizadas").text(result.horas)
         }
     })
 }
