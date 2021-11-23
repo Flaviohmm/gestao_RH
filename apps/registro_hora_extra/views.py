@@ -77,4 +77,19 @@ class UtilizouHoraExtra(View):
         )
 
         return HttpResponse(response, content_type='application/json')
-        
+
+class NaoUtilizouHoraExtra(View):
+    def post(self, *args, **kwargs):
+        registro_hora_extra = RegistroHoraExtra.objects.get(id=kwargs['pk'])
+        registro_hora_extra.utilizada = False
+        registro_hora_extra.save()
+
+        empregado = self.request.user.funcionario
+
+        response = json.dumps(
+            {
+                'mensagem': 'Requisição executada'
+            }
+        )
+
+        return HttpResponse(response, content_type='application/json')
