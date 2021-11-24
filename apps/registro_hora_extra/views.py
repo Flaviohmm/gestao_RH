@@ -128,17 +128,20 @@ class ExportarExcel(View):
         font_style = xlwt.XFStyle()
         font_style.font.bold = True
 
-        # Fonts -> Fira Code; Bold -> True
         font0 = xlwt.Font()
         font0.name = 'Fira Code'
+        font0.bold = True
+        font_style.font = font0
 
         columns = ['Id', 'Motivo', 'Funcionario', 'Rest. Func', 'Horas']
 
         for col_num in range(len(columns)):
             ws.write(row_num, col_num, columns[col_num], font_style)
 
-        # Fonts -> Fira Code
         font_style = xlwt.XFStyle()
+        font0 = xlwt.Font()
+        font0.name = 'Fira Code'
+        font0.bold = False
         font_style.font = font0
 
         registros = RegistroHoraExtra.objects.filter(utilizada=False)
@@ -153,4 +156,4 @@ class ExportarExcel(View):
             row_num += 1
 
         wb.save(response)
-        return response
+        return response 
