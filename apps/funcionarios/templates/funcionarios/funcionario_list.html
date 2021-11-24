@@ -14,6 +14,12 @@
 
     <a href="{% url 'create_funcionario' %}" class="btn btn-info" style="margin-top: 10px;"> Novo </a>
     <a href="{% url 'relatorio_funcionarios' %}" class="btn btn-info" style="margin-top: 10px;">
-        Gerar Relatório de Funcionários
+        Relatório de Funcionários
+    </a>
+    <a href="{% url 'relatorio_funcionarios_html' %}" class="btn btn-info" style="margin-top: 10px;">
+        Relatório de Funcionários HTML
+    </a>
+    <a href="{% url 'relatorio_funcionarios_html_debug' %}" class="btn btn-danger" style="margin-top: 10px;">
+        Relatório de Funcionários HTML 
     </a>
 {% endblock %}
