@@ -27,9 +27,9 @@ SECRET_KEY = 'django-insecure-w+y-dx@!hq0p_8vx0zwo3bmcw=+=t#csv&kc%uv^p2x($$4*m$
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '18.228.166.147', 
+    '18.230.61.240', 
     '127.0.0.1',
-    'ec2-18-228-166-147.sa-east-1.compute.amazonaws.com'
+    'ec2-18-230-61-240.sa-east-1.compute.amazonaws.com'
 ]
 
 
