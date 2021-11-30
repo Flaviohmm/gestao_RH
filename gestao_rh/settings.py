@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'apps.core',
     'bootstrapform',
     'bootstrap5',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -147,6 +148,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 LOGIN_REDIRECT_URL = 'home'
 
 LOGOUT_REDIRECT_URL = 'login'
+
+CELERY_RESULT_BACKEND = 'django-db'
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
